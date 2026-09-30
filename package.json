@@ -1,0 +1,58 @@
+{
+  "name": "react-native-reactor",
+  "version": "0.1.0",
+  "description": "React Native SDK for Reactor real-time world models — the React SDK's components and hooks, on react-native-webrtc.",
+  "license": "Apache-2.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "react-native": "src/index.ts",
+  "files": [
+    "src",
+    "ios",
+    "plugin",
+    "app.plugin.js",
+    "expo-module.config.json",
+    "proto",
+    "NOTICE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "expo-file-system": "*",
+    "expo-video": "*",
+    "react": ">=18",
+    "react-native": ">=0.74",
+    "react-native-webrtc": ">=124.0.0"
+  },
+  "peerDependenciesMeta": {
+    "expo": {
+      "optional": true
+    },
+    "expo-file-system": {
+      "optional": true
+    },
+    "expo-video": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@config-plugins/react-native-webrtc": "^15.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "@types/react": "~19.2.2",
+    "expo": "~57.0.26",
+    "expo-file-system": "~57.0.4",
+    "expo-modules-core": "^57.0.20",
+    "expo-video": "~57.0.5",
+    "react": "19.2.3",
+    "react-native": "^0.86.2",
+    "react-native-webrtc": "^124.0.8",
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.10"
+  }
+}
