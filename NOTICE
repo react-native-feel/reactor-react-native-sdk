@@ -1,0 +1,16 @@
+react-native-reactor
+Copyright 2026 the react-native-reactor authors
+
+This product includes software derived from Reactor Client SDKs
+(https://github.com/reactor-team/reactor-client-sdks, commit f9df0e05),
+licensed under the Apache License, Version 2.0:
+
+  - src/errors.ts, src/file-ref.ts, src/jwt.ts, src/core/emitter.ts,
+    src/core/stats.ts, src/core/file-refs.ts and src/react/{store.ts,hooks.ts,
+    ReactorProvider.tsx} are adapted from sdks/js/src.
+  - src/core/{client,coordinator,peer,protocol,errors,http}.ts are a
+    TypeScript port of crates/reactor-core and crates/reactor-wasm/src/peer.rs.
+  - proto/reactor_wire/v1/*.proto are the reactor_wire.v1 sources published by
+    reactor-team/reactor-runtime (release wire/v1.20260722.6).
+  - ios/ReactorAudioModule.swift follows the audio-session policy of
+    sdks/swift/Sources/ReactorMedia.

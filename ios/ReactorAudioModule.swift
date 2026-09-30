@@ -55,7 +55,9 @@ public class ReactorAudioModule: Module {
     case "voiceChat":
       config.category = AVAudioSession.Category.playAndRecord.rawValue
       config.mode = AVAudioSession.Mode.voiceChat.rawValue
-      config.categoryOptions = [.defaultToSpeaker, .allowBluetooth]
+      // `.allowBluetooth` (raw 0x4) was renamed `.allowBluetoothHFP` in the
+      // iOS 26 SDK; the raw value compiles warning-free on both sides.
+      config.categoryOptions = [.defaultToSpeaker, AVAudioSession.CategoryOptions(rawValue: 0x4)]
     case "default":
       guard let original else { return }
       config.category = original.category

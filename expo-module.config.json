@@ -1,7 +1,8 @@
 {
   "platforms": ["apple", "android"],
   "apple": {
-    "modules": ["ReactorAudioModule"]
+    "modules": ["ReactorAudioModule"],
+    "podspecPath": "ios/ReactorAudio.podspec"
   },
   "android": {
     "modules": ["inc.reactor.rn.ReactorAudioModule"]
