@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reactor React Native SDK</title>
+  <meta name="description" content="React Native SDK for Reactor real-time world models — the React SDK's components and hooks, on react-native-webrtc.">
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --fg: #ececf1;
+      --muted: #9a9aa8;
+      --card: #15151c;
+      --border: #26262f;
+      --accent: #7c6cff;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #fafafa; --fg: #111118; --muted: #5c5c6b; --card: #fff; --border: #e4e4ea; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 80px 16px 48px; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.02em; }
+    .lead { color: var(--muted); font-size: 1.15rem; margin: 0 0 32px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 56px; }
+    .free { color: var(--muted); font-size: 0.95rem; margin: -40px 0 0; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600;
+      border: 1px solid var(--border); color: var(--fg); background: var(--card);
+    }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn svg { width: 18px; height: 18px; fill: currentColor; }
+    h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 40px 0 12px; }
+    pre {
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 16px; overflow-x: auto; font-size: 0.85rem; line-height: 1.5; margin: 0;
+    }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    ul { padding-left: 20px; margin: 0; }
+    li { margin: 6px 0; }
+    li code { font-size: 0.9em; }
+    footer { margin-top: 64px; color: var(--muted); font-size: 0.9rem; }
+    footer a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Reactor SDK<br>for React Native</h1>
+    <p class="lead">Stream and steer Reactor real-time world models from iOS and Android. The React SDK's components and hooks, with the same names and props, running on <code>react-native-webrtc</code>.</p>
+
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/react-native-feel/reactor-react-native-sdk">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+      <a class="btn" href="https://docs.reactor.inc/sdk-reference/react-components">Reactor docs</a>
+    </div>
+    <p class="free">Free and open source. No subscription needed.</p>
+
+    <h2>Install</h2>
+    <pre><code>npx expo install react-native-reactor react-native-webrtc @config-plugins/react-native-webrtc</code></pre>
+
+    <h2>Use</h2>
+    <pre><code>import { ReactorProvider, ReactorView } from 'react-native-reactor';
+
+export default function App() {
+  return (
+    &lt;ReactorProvider modelName="reactor/helios" jwtToken={getJwt}
+                     connectOptions={{ autoConnect: true }}&gt;
+      &lt;ReactorView style={{ width: '100%', aspectRatio: 16 / 9 }} /&gt;
+    &lt;/ReactorProvider&gt;
+  );
+}</code></pre>
+
+    <h2>What's inside</h2>
+    <ul>
+      <li><code>ReactorProvider</code>, <code>ReactorView</code>, <code>WebcamStream</code>, <code>ClipPlayer</code>, <code>useReactor</code>, <code>useReactorMessage</code></li>
+      <li>A TypeScript port of the Rust core, so no WebAssembly is needed on Hermes</li>
+      <li>Works on iOS and Android with Expo development builds</li>
+    </ul>
+
+    <footer>
+      Apache-2.0 · <a href="https://github.com/react-native-feel/reactor-react-native-sdk">github.com/react-native-feel/reactor-react-native-sdk</a>
+    </footer>
+  </main>
+</body>
+</html>
